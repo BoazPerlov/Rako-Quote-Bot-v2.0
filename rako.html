@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html>
+    <Head>
+        <title>Rako Quote Bot</title>
+        <link rel="stylesheet" type="text/css" href="styles.css ">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="script.js"></script>
+        <meta charset="UTF-8">
+    </Head>
+
+    <body>
+        <header class="header">
+            <img src="Logo.png" width="35">
+        </header>
+        
+        <div id="mySidenav" class="sidenav">
+                <a href="#" id="about">About</a>
+                <a href="#" id="blog">Blog</a>
+                <a href="#" id="projects">Projects</a>
+                <a href="#" id="contact">Contact</a>
+        </div> 
+
+        <form action="" class="quoteForm">
+            <fieldset class="formGroup" id="bridgeType">
+                <legend>System Type:</legend>
+                <input type="radio" name="systemType" value="bridgeWired"> Wired <br>
+                <input type="radio" name="systemType" value="bridgeWireless"> Wireless<br>
+                <input type="radio" name="systemType" value="bridgeWired"> Both<br>
+            </fieldset>
+
+            <fieldset class="formGroup" id="tc">
+                <legend>Time Clcok</legend>
+                <input type="radio" name="timeClock" value="tcYes"> Required <br>
+                <input type="radio" name="timeClock" value="tcNo"> Not required<br>
+            </fieldset>
+
+            <fieldset class="formGroup" id="circuits">
+                <legend>Lighting Circuits</legend>
+                    <!--
+                    <p class="circuitTitle">Wired</p> <p class="circuitTitle">Wireless</p> <br>
+                    Dimming: <input type="text" name="dimWired" placeholder="0" class="qty"><input type="text" name="dimWireless" placeholder="0" class="qty"><br>
+                    Switching: <input type="text" name="dimWired" placeholder="0" class="qty"><input type="text" name="dimWireless" placeholder="0" class="qty"><br>
+                    Dali/DSI/0-10v: <input type="text" name="dimWired" placeholder="0" class="qty"><input type="text" name="dimWireless" placeholder="0" class="qty"><br>
+                    Curtains/Blinds: <input type="text" name="dimWired" placeholder="0" class="qty"><input type="text" name="dimWireless" placeholder="0" class="qty"><br>-->
+                <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Wired</th>
+                                <th>Wireless</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dimming:</td>
+                                <td><input type="text" name="dimWired" placeholder="0" class="qty"></td>
+                                <td><input type="text" name="dimWireless" placeholder="0" class="qty"></td>
+                            </tr>
+                            <tr>
+                                <td>Switching</td>
+                                <td><input type="text" name="swWired" placeholder="0" class="qty"></td>
+                                <td><input type="text" name="swWireless" placeholder="0" class="qty"></td>
+                            </tr>
+                            <tr>
+                                <td>Dali/DSI/0-10v:</td>
+                                <td><input type="text" name="daWired" placeholder="0" class="qty"></td>
+                                <td><input type="text" name="daWireless" placeholder="0" class="qty"></td>
+                            </tr>
+                            <tr>
+                                <td>Curtains/Blinds:</td>
+                                <td><input type="text" name="cubWired" placeholder="0" class="qty"></td>
+                                <td><input type="text" name="cubWireless" placeholder="0" class="qty"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+            
+            </fieldset>
+
+            <fieldset class="formGroup" id="wiredKeypads">
+                <legend>Wired Keypads:</legend>
+                3-buttons: <input type="text" name="RAK-WCM-030" placeholder="0" class="qty"> <select name="RAK-WCM-030Colour">
+                    <option value="RAK-WLF-030-SS">Brushed Stainless Steel</option>
+                    <option value="RAK-WLF-030-w">White</option>
+                    <option value="RAK-WLF-030-BN">Black Nickel</option>
+                    <option value="RAK-WLF-030-">Polished Brass</option>
+                    <option value="RAK-WLF-030-MSS">Mirrored Stainless Steel</option>
+                  </select><br>
+                7-buttons: <input type="text" name="RAK-WCM-070" placeholder="0"class="qty"> <select name="RAK-WCM-070Colour">
+                    <option value="RAK-WLF-070-SS">Brushed Stainless Steel</option>
+                    <option value="RAK-WLF-070-W">White</option>
+                    <option value="RAK-WLF-070-BN">Black Nickel</option>
+                    <option value="RAK-WLF-070-PB">Polished Brass</option>
+                    <option value="RAK-WLF-070-MSS">Mirrored Stainless Steel</option>
+                  </select><br>
+                10-buttons: <input type="text" name="RAK-WCM-100" placeholder="0" class="qty"> <select name="RAK-WCM-100Colour">
+                    <option value="RAK-WLF-100-SS">Brushed Stainless Steel</option>
+                    <option value="RAK-WLF-100-W">White</option>
+                    <option value="RAK-WLF-100-BN">Black Nickel</option>
+                    <option value="RAK-WLF-100-PB">Polished Brass</option>
+                    <option value="RAK-WLF-100-MSS">Mirrored Stainless Steel</option>
+                  </select><br>
+            </fieldset>
+
+            <fieldset class="formGroup" id="wirelessKeypads">
+                <legend>Wireless Keypads:</legend>
+                3-buttons: <input type="text" name="RAK-RCM-030" placeholder="0"class="qty"> <select name="RAK-RCM-030Colour">
+                    <option value="RAK-RLF-030-SS">Brushed Stainless Steel</option>
+                    <option value="RAK-RLF-030-W">White</option>
+                    <option value="RAK-RLF-030-BN">Black Nickel</option>
+                    <option value="RAK-RLF-030-PB">Polished Brass</option>
+                    <option value="RAK-RLF-030-MSS">Mirrored Stainless Steel</option>
+                  </select><br>
+                7-buttons: <input type="text" name="RAK-RCM-070" placeholder="0" class="qty"> <select name="RAK-RCM-070Colour">
+                    <option value="RAK-RLF-070-SS">Brushed Stainless Steel</option>
+                    <option value="RAK-RLF-070-W">White</option>
+                    <option value="RAK-RLF-070-BN">Black Nickel</option>
+                    <option value="RAK-RLF-070-PB">Polished Brass</option>
+                    <option value="RAK-RLF-070-MSS">Mirrored Stainless Steel</option>
+                  </select><br>
+                10-buttons: <input type="text" name="RAK-RCM-100" placeholder="0" class="qty"> <select name="RAK-RCM-100Colour">
+                    <option value="RAK-RLF-100-SS">Brushed Stainless Steel</option>
+                    <option value="RAK-RLF-100-W">White</option>
+                    <option value="RAK-RLF-100-BN">Black Nickel</option>
+                    <option value="RAK-RLF-100-PB">Polished Brass</option>
+                    <option value="RAK-RLF-100-MSS">Mirrored Stainless Steel</option>
+                  </select><br>
+            </fieldset>
+
+            <fieldset class="formGroup" id="nfcKeypads">
+                <legend>NFC Keypads:</legend>
+                3-buttons: <input type="text" name="RAK-RNC-030" placeholder="0" class="qty"> <select name="RAK-RNC-030Colour">
+                    <option value="RAK-RLF-030-SS">Brushed Stainless Steel</option>
+                    <option value="RAK-RLF-030-W">White</option>
+                    <option value="RAK-RLF-030-BN">Black Nickel</option>
+                    <option value="RAK-RLF-030-PB">Polished Brass</option>
+                    <option value="RAK-RLF-030-MSS">Mirrored Stainless Steel</option>
+                  </select><br>
+                7-buttons: <input type="text" name="RAK-RNC-070" placeholder="0"class="qty" > <select name="RAK-RNC-070Colour">
+                    <option value="RAK-RLF-070-SS">Brushed Stainless Steel</option>
+                    <option value="RAK-RLF-070-W">White</option>
+                    <option value="RAK-RLF-070-BN">Black Nickel</option>
+                    <option value="RAK-RLF-070-PB">Polished Brass</option>
+                    <option value="RAK-RLF-070-MSS">Mirrored Stainless Steel</option>
+                  </select><br>
+            </fieldset>
+
+            <div id="genQuote">
+                <input type="button" value="Generate Quote" class="genQuoteBtn" onclick="generate()">
+            </div>
+            
+
+        </form>
+    </body>
+    
+</html>
